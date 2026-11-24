@@ -1,0 +1,18 @@
+{
+  "name": "Đài Học Tập Của Bé",
+  "short_name": "Đài Của Bé",
+  "description": "Đài phát thanh học tập từ YouTube dành cho bé (tối ưu cho hộp in 3D iPhone SE)",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#111317",
+  "theme_color": "#111317",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#e8b86d"/>
+  <rect x="44" y="96" width="424" height="320" rx="56" fill="#1e222a" stroke="#f6e3ba" stroke-width="14"/>
+  <!-- Retro Speaker Grille -->
+  <g fill="#d9a152">
+    <rect x="78" y="144" width="84" height="18" rx="9"/>
+    <rect x="78" y="180" width="84" height="18" rx="9"/>
+    <rect x="78" y="216" width="84" height="18" rx="9"/>
+    <rect x="78" y="252" width="84" height="18" rx="9"/>
+    <rect x="78" y="288" width="84" height="18" rx="9"/>
+    <rect x="78" y="324" width="84" height="18" rx="9"/>
+  </g>
+  <!-- Display -->
+  <rect x="192" y="142" width="242" height="120" rx="22" fill="#102925" stroke="#45d1a6" stroke-width="8"/>
+  <rect x="218" y="196" width="18" height="44" rx="9" fill="#45d1a6"/>
+  <rect x="248" y="170" width="18" height="70" rx="9" fill="#6bf0c6"/>
+  <rect x="278" y="184" width="18" height="56" rx="9" fill="#45d1a6"/>
+  <rect x="308" y="160" width="18" height="80" rx="9" fill="#f7c85c"/>
+  <rect x="338" y="188" width="18" height="52" rx="9" fill="#45d1a6"/>
+  <rect x="368" y="176" width="18" height="64" rx="9" fill="#6bf0c6"/>
+  <rect x="398" y="202" width="14" height="38" rx="7" fill="#45d1a6"/>
+  <!-- 4 Touch Buttons -->
+  <rect x="192" y="288" width="48" height="48" rx="14" fill="#3a4252"/>
+  <rect x="256" y="288" width="48" height="48" rx="14" fill="#34c77b"/>
+  <rect x="320" y="288" width="48" height="48" rx="14" fill="#3a4252"/>
+  <rect x="384" y="288" width="48" height="48" rx="14" fill="#f09a3e"/>
+</svg>

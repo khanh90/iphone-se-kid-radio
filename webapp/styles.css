@@ -1,0 +1,1022 @@
+/* ==========================================================================
+   iPhone SE Kid's Radio — Precision 1:1 3D-Shell Calibrated Stylesheet
+   Active Screen: 104.0 mm x 58.5 mm (16:9 Landscape, 667 x 375 CSS px)
+   ========================================================================== */
+
+:root {
+  --bg-mask: #0d0f13;
+  --vfd-bg: #0c1f1d;
+  --vfd-border: #1e4b45;
+  --accent: #3fe0a8;
+  --accent-glow: rgba(63, 224, 168, 0.35);
+  --warm-amber: #f7b955;
+  --text-bright: #e8fff7;
+  --text-muted: #7eb8a7;
+  --offset-x: 0%;
+  --offset-y: 0%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-mask);
+  color: #f0f4f8;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "Segoe UI", Roboto, sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+/* ==========================================================================
+   PORTRAIT GUARD (only on narrow portrait phones)
+   ========================================================================== */
+.portrait-guard {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: #111317;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.portrait-card {
+  max-width: 300px;
+  background: #1c2028;
+  border: 1px solid #2e3440;
+  border-radius: 20px;
+  padding: 28px 22px;
+}
+
+.portrait-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.portrait-card h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: var(--warm-amber);
+}
+
+.portrait-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #b7c2d0;
+}
+
+@media (max-width: 520px) and (orientation: portrait) {
+  .portrait-guard {
+    display: flex;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP PREVIEW STAGE vs IPHONE SE FULLSCREEN MODE
+   ========================================================================== */
+.desktop-stage {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 35%, #232833 0%, #101216 100%);
+  gap: 18px;
+  padding: 20px;
+}
+
+/* Realistic 157 x 80 mm Retro 3D-Printed Radio Chassis (Desktop Preview) */
+.radio-chassis {
+  position: relative;
+  width: min(92vw, 940px);
+  aspect-ratio: 157 / 80;
+  background: linear-gradient(180deg, #e7c27d 0%, #d4a65a 100%);
+  border-radius: 6.8% / 13.5%;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.55),
+    inset 0 2px 3px rgba(255, 245, 220, 0.55),
+    inset 0 -4px 10px rgba(90, 58, 16, 0.35);
+  display: grid;
+  /* Exact mm proportions: Left 30mm (19.1%) | Screen 104mm (66.24%) | Right 23mm (14.65%) */
+  grid-template-columns: 19.108% 66.242% 14.65%;
+  align-items: center;
+  padding: 0;
+}
+
+.chassis-top-buttons {
+  position: absolute;
+  top: -11px;
+  left: 61%;
+  display: flex;
+  gap: 24px;
+}
+
+.phys-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 14px;
+  background: linear-gradient(180deg, #f3d79e, #c99749);
+  border-radius: 6px 6px 0 0;
+  color: #4f350d;
+  font-size: 11px;
+  font-weight: 800;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.chassis-speaker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8%;
+  height: 62%;
+  padding: 0 18%;
+}
+
+.grille-slot {
+  height: 6%;
+  background: #2b2113;
+  border-radius: 999px;
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.75), 0 1px 0 rgba(255, 240, 205, 0.45);
+}
+
+.chassis-right-bezel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 66%;
+  padding: 6% 10%;
+  color: #5c3f14;
+}
+
+.brand-mark {
+  font-size: clamp(10px, 1.3vw, 14px);
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  opacity: 0.78;
+}
+
+.tuning-ticks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 45%;
+  opacity: 0.45;
+}
+
+.tuning-ticks span {
+  height: 3px;
+  background: #5c3f14;
+  border-radius: 2px;
+}
+
+.desktop-helper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(92vw, 940px);
+  font-size: 13px;
+  color: #9ba8ba;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.helper-btn {
+  border: 0;
+  background: #2a3342;
+  color: #eef4fc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.helper-btn:hover {
+  background: #384457;
+}
+
+/* Exact 104.0 x 58.5 mm Active Screen Container */
+.screen-surface {
+  position: relative;
+  width: 100%;
+  height: 73.125%; /* 58.5 / 80.0 = 73.125% of radio height */
+  background: var(--bg-mask);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.65);
+}
+
+/* ==========================================================================
+   IPHONE SE FULLSCREEN / PWA MODE (viewport <= 760px or standalone)
+   Fills 100dvw x 100dvh edge-to-edge so cutouts match 1:1 to physical mm!
+   ========================================================================== */
+@media (max-width: 760px), (display-mode: standalone) {
+  .desktop-stage {
+    padding: 0;
+    gap: 0;
+    background: var(--bg-mask);
+  }
+
+  .radio-chassis {
+    width: 100dvw;
+    height: 100dvh;
+    aspect-ratio: auto;
+    border-radius: 0;
+    background: var(--bg-mask);
+    box-shadow: none;
+    display: block;
+  }
+
+  .chassis-top-buttons,
+  .chassis-speaker,
+  .chassis-right-bezel,
+  .desktop-helper {
+    display: none !important;
+  }
+
+  .screen-surface {
+    width: 100dvw;
+    height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* ==========================================================================
+   CALIBRATION OVERLAY (Matches cad/output/screen_calibration.json)
+   ========================================================================== */
+.calibration-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  border: 2px dashed #ff4f6d;
+  background-image:
+    linear-gradient(to right, rgba(255, 79, 109, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 79, 109, 0.16) 1px, transparent 1px);
+  background-size: 10% 10%;
+}
+
+.cal-tag {
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4f6d;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   YOUTUBE PLAYER STAGE (Hidden in Radio Mode, positioned in Mini-Video Mode)
+   ========================================================================== */
+.yt-stage {
+  position: absolute;
+  /* Keep inside viewport at tiny opacity so iOS Safari allows audio playback! */
+  left: calc(3.846% + var(--offset-x));
+  top: calc(6.410% + var(--offset-y));
+  width: 92.308%;
+  height: 48.718%;
+  z-index: 5;
+  overflow: hidden;
+  border-radius: 10px;
+  opacity: 0.01;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.yt-stage iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+
+body.mini-video-mode .yt-stage {
+  opacity: 1;
+  z-index: 25;
+}
+
+body.mini-video-mode .radio-vfd {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Transparent shield prevents child from clicking YouTube logo / recommendations */
+.mini-video-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  background: transparent;
+}
+
+/* ==========================================================================
+   1. TOP DISPLAY WINDOW (exact: left 3.846%, top 6.410%, w 92.308%, h 48.718%)
+   ========================================================================== */
+.radio-display {
+  position: absolute;
+  left: calc(3.846% + var(--offset-x));
+  top: calc(6.410% + var(--offset-y));
+  width: 92.308%;
+  height: 48.718%;
+  z-index: 20;
+  border-radius: 12px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 20%, #153531 0%, var(--vfd-bg) 75%);
+  border: 2px solid var(--vfd-border);
+  box-shadow:
+    inset 0 0 24px rgba(0, 0, 0, 0.7),
+    0 0 18px rgba(0, 0, 0, 0.45);
+}
+
+.radio-vfd {
+  width: 100%;
+  height: 100%;
+  padding: 3.2% 3.6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: opacity 0.25s ease;
+}
+
+.vfd-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.channel-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(63, 224, 168, 0.13);
+  border: 1px solid rgba(63, 224, 168, 0.35);
+  border-radius: 999px;
+  padding: 2px 10px 2px 7px;
+  min-width: 0;
+}
+
+.channel-icon {
+  font-size: clamp(12px, 2.3vw, 18px);
+}
+
+.channel-freq {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(10px, 1.8vw, 14px);
+  font-weight: 800;
+  color: var(--warm-amber);
+  letter-spacing: 0.04em;
+}
+
+.channel-name {
+  font-size: clamp(10px, 1.8vw, 14px);
+  font-weight: 800;
+  color: var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-cluster {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.source-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(8px, 1.4vw, 11px);
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  background: rgba(96, 165, 250, 0.18);
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  color: #93c5fd;
+}
+
+.source-badge[data-source="offline"] {
+  background: rgba(63, 224, 168, 0.2);
+  border-color: rgba(63, 224, 168, 0.55);
+  color: #6bf0c6;
+}
+
+.sleep-badge {
+  font-size: clamp(9px, 1.5vw, 12px);
+  font-weight: 700;
+  color: #ffd67a;
+  background: rgba(247, 185, 85, 0.16);
+  border: 1px solid rgba(247, 185, 85, 0.4);
+  padding: 1px 6px;
+  border-radius: 999px;
+}
+
+.state-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #f59e0b;
+  box-shadow: 0 0 8px #f59e0b;
+}
+
+.state-dot[data-state="playing"] {
+  background: #3fe0a8;
+  box-shadow: 0 0 10px #3fe0a8;
+  animation: pulse-dot 1.4s infinite ease-in-out;
+}
+
+.state-dot[data-state="loading"] {
+  background: #60a5fa;
+  box-shadow: 0 0 10px #60a5fa;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.7; }
+}
+
+.track-counter {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(10px, 1.7vw, 13px);
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.vfd-middle-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 0;
+}
+
+/* Animated Equalizer Bars */
+.eq-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: clamp(24px, 6.2vh, 42px);
+  flex-shrink: 0;
+}
+
+.eq-bars span {
+  width: clamp(3px, 0.7vw, 6px);
+  height: 22%;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--warm-amber) 0%, var(--accent) 100%);
+  opacity: 0.45;
+  transition: height 0.2s ease, opacity 0.2s ease;
+}
+
+.eq-bars.playing span {
+  opacity: 1;
+  animation: eq-bounce 0.85s ease-in-out infinite alternate;
+}
+
+.eq-bars.playing span:nth-child(2)  { animation-delay: 0.12s; animation-duration: 0.65s; }
+.eq-bars.playing span:nth-child(3)  { animation-delay: 0.25s; animation-duration: 0.92s; }
+.eq-bars.playing span:nth-child(4)  { animation-delay: 0.05s; animation-duration: 0.72s; }
+.eq-bars.playing span:nth-child(5)  { animation-delay: 0.31s; animation-duration: 0.60s; }
+.eq-bars.playing span:nth-child(6)  { animation-delay: 0.18s; animation-duration: 0.88s; }
+.eq-bars.playing span:nth-child(7)  { animation-delay: 0.40s; animation-duration: 0.70s; }
+.eq-bars.playing span:nth-child(8)  { animation-delay: 0.08s; animation-duration: 0.95s; }
+.eq-bars.playing span:nth-child(9)  { animation-delay: 0.22s; animation-duration: 0.68s; }
+.eq-bars.playing span:nth-child(10) { animation-delay: 0.35s; animation-duration: 0.80s; }
+.eq-bars.playing span:nth-child(11) { animation-delay: 0.14s; animation-duration: 0.74s; }
+.eq-bars.playing span:nth-child(12) { animation-delay: 0.28s; animation-duration: 0.63s; }
+
+@keyframes eq-bounce {
+  0%   { height: 18%; }
+  50%  { height: 95%; }
+  100% { height: 35%; }
+}
+
+.track-meta {
+  min-width: 0;
+  flex: 1;
+}
+
+.track-title {
+  font-size: clamp(14px, 3vw, 24px);
+  font-weight: 800;
+  color: var(--text-bright);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 12px var(--accent-glow);
+}
+
+.track-subtitle {
+  font-size: clamp(10px, 1.8vw, 14px);
+  color: var(--text-muted);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vfd-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time-label {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(9px, 1.6vw, 12px);
+  color: var(--text-muted);
+  min-width: 34px;
+}
+
+.time-label:last-child {
+  text-align: right;
+}
+
+.progress-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--warm-amber));
+  transition: width 0.4s linear;
+}
+
+/* ==========================================================================
+   2. FOUR PRECISION TOUCH BUTTONS (exact: top 62.821%, w 18.269%, h 30.769%)
+   ========================================================================== */
+.touch-btn {
+  position: absolute;
+  top: calc(62.821% + var(--offset-y));
+  width: 18.269%;
+  height: 30.769%;
+  z-index: 30;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #272d3a 0%, #1b202a 100%);
+  color: #f3f7fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+  padding: 6px;
+  cursor: pointer;
+  box-shadow:
+    inset 0 2px 1px rgba(255, 255, 255, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.15s ease;
+}
+
+.touch-btn svg {
+  width: clamp(22px, 5vw, 38px);
+  height: clamp(22px, 5vw, 38px);
+  fill: currentColor;
+}
+
+.btn-label {
+  font-size: clamp(9px, 1.6vw, 13px);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  opacity: 0.88;
+}
+
+.touch-btn:active,
+.touch-btn.pressed {
+  transform: scale(0.93);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.65);
+}
+
+/* Exact X positions from cad/output/screen_calibration.json */
+.btn-prev    { left: calc(6.250%  + var(--offset-x)); }
+.btn-play    { left: calc(29.327% + var(--offset-x)); }
+.btn-next    { left: calc(52.404% + var(--offset-x)); }
+.btn-channel { left: calc(75.481% + var(--offset-x)); }
+
+.btn-play {
+  background: linear-gradient(180deg, #27a876 0%, #1a7c56 100%);
+  border-color: rgba(114, 245, 194, 0.45);
+  color: #ffffff;
+}
+
+.btn-play.is-playing {
+  background: linear-gradient(180deg, #e0912d 0%, #b86c16 100%);
+  border-color: rgba(255, 214, 138, 0.5);
+}
+
+.btn-channel {
+  background: linear-gradient(180deg, #3a5485 0%, #263a61 100%);
+  border-color: rgba(145, 186, 255, 0.35);
+}
+
+/* Subtle ring indicating Parent long-press progress on Channel button */
+.hold-ring {
+  position: absolute;
+  inset: 3px;
+  border-radius: 11px;
+  border: 2px solid transparent;
+  pointer-events: none;
+}
+
+.btn-channel.holding .hold-ring {
+  border-color: #ffd166;
+  animation: hold-pulse 0.5s linear infinite;
+}
+
+@keyframes hold-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ==========================================================================
+   MODALS (<dialog> — Parent PIN Gate & Settings Dashboard)
+   ========================================================================== */
+.modal-dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: min(94vw, 560px);
+  width: 100%;
+  color: #f0f4f8;
+}
+
+.modal-dialog::backdrop {
+  background: rgba(5, 7, 11, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.modal-card {
+  background: #1a1f29;
+  border: 1px solid #2e3748;
+  border-radius: 18px;
+  padding: 18px 20px;
+  max-height: 90dvh;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.icon-close {
+  border: 0;
+  background: #2b3344;
+  color: #dce5f2;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* PIN Dialog */
+.pin-dialog {
+  max-width: 320px;
+}
+
+.modal-hint {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: #9ba8ba;
+  text-align: center;
+}
+
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.pin-dots span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #556278;
+  background: transparent;
+}
+
+.pin-dots span.filled {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.pin-error {
+  color: #ff6b81;
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.pin-keypad button {
+  height: 44px;
+  border: 1px solid #303a4d;
+  border-radius: 10px;
+  background: #252c3a;
+  color: #f4f7fb;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.pin-keypad button:active {
+  background: #384359;
+}
+
+.pin-keypad .key-fn {
+  font-size: 13px;
+  color: #a9b6c9;
+}
+
+/* Parent Tabs & Form Controls */
+.parent-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #2b3445;
+  padding-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  border: 1px solid #2f394c;
+  background: #232a37;
+  color: #b4c0d2;
+  padding: 7px 11px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #2b7a5e;
+  border-color: #3fe0a8;
+  color: #ffffff;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.channel-selector-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.channel-selector-row select,
+.setting-row select,
+.add-video-form input,
+.pin-change-row input {
+  background: #12161e;
+  color: #f2f6fc;
+  border: 1px solid #344056;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.add-video-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 560px) {
+  .add-video-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+.btn-primary, .btn-secondary, .btn-danger {
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 13px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #27a876;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: #303b4f;
+  color: #eef4fc;
+}
+
+.btn-danger {
+  background: #c93b4b;
+  color: #fff;
+}
+
+.admin-track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.admin-track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #141821;
+  border: 1px solid #283142;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.admin-track-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-track-title {
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-track-id {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: #7d8ca3;
+}
+
+.admin-track-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn-mini {
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #2a3345;
+  color: #eef4fc;
+}
+
+.btn-mini.del {
+  background: #5c222a;
+  color: #ff9ea9;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid #262e3d;
+}
+
+.setting-row:last-child {
+  border-bottom: 0;
+}
+
+.setting-desc {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: #8f9eb3;
+}
+
+.offset-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.pin-change-row {
+  display: flex;
+  gap: 6px;
+}
+
+.pin-change-row input {
+  width: 96px;
+}
+
+/* Offline Audio Importer Box */
+.offline-import-box {
+  background: rgba(63, 224, 168, 0.08);
+  border: 1px solid rgba(63, 224, 168, 0.32);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.offline-import-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.offline-storage-info {
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--accent);
+  background: rgba(63, 224, 168, 0.14);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.offline-import-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-offline-pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #22996d;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-offline-pick:hover {
+  background: #28b380;
+}
+
+.offline-import-status {
+  font-size: 12px;
+  color: #9bb5ad;
+}

@@ -1,0 +1,47 @@
+{
+  "device": "iPhone SE (2nd/3rd Gen) Landscape",
+  "activeScreenMm": {
+    "width": 104.0,
+    "height": 58.5
+  },
+  "displayWindow": {
+    "leftPct": 3.846,
+    "topPct": 6.41,
+    "widthPct": 92.308,
+    "heightPct": 48.718
+  },
+  "buttons": [
+    {
+      "id": "prev",
+      "label": "Bài trước",
+      "leftPct": 6.25,
+      "topPct": 62.821,
+      "widthPct": 18.269,
+      "heightPct": 30.769
+    },
+    {
+      "id": "play",
+      "label": "Phát/Dừng",
+      "leftPct": 29.327,
+      "topPct": 62.821,
+      "widthPct": 18.269,
+      "heightPct": 30.769
+    },
+    {
+      "id": "next",
+      "label": "Bài sau",
+      "leftPct": 52.404,
+      "topPct": 62.821,
+      "widthPct": 18.269,
+      "heightPct": 30.769
+    },
+    {
+      "id": "channel",
+      "label": "Đổi kênh",
+      "leftPct": 75.481,
+      "topPct": 62.821,
+      "widthPct": 18.269,
+      "heightPct": 30.769
+    }
+  ]
+}
