@@ -2,7 +2,7 @@
    iPhone SE Kid's Radio — Hybrid Offline (IndexedDB + Audio) & YouTube Engine
    ========================================================================== */
 
-const STORAGE_KEY = "kid_radio_iphone_se_v1";
+const STORAGE_KEY = "kid_radio_iphone_se_v2";
 const IDB_NAME = "kid_radio_audio_db";
 const IDB_STORE = "tracks";
 
@@ -17,9 +17,43 @@ const DEFAULT_DATA = {
   trackIndex: 0,
   channels: [
     {
+      id: "vn-danh-van",
+      icon: "🇻🇳",
+      freq: "FM 88.5",
+      name: "TẬP ĐÁNH VẦN TIẾNG VIỆT",
+      tracks: [
+        { type: "youtube", id: "kCwxYLWsVA8", title: "Ôn hè — Tập đánh vần tiếng Việt 2026 (4-6 tuổi)" },
+        { type: "youtube", id: "EGgYH55yqIk", title: "Tập đánh vần (Trang 43–46 • Bản chậm)" },
+        { type: "youtube", id: "g_kAqPzSrZc", title: "Tập đánh vần (Trang 47–50 • Bản chậm)" },
+        { type: "youtube", id: "JQt3_rbIiXw", title: "Tập đánh vần (Trang 51–55 • Bản chậm)" },
+        { type: "youtube", id: "lxFQEBf4Ivc", title: "Tập đánh vần (Trang 56–62 • Bản chậm)" },
+        { type: "youtube", id: "jDZ265kx-K0", title: "Tập đánh vần (Trang 63–69 • Bản chậm)" },
+        { type: "youtube", id: "XLn6jo-_gq8", title: "Tập đánh vần (Trang 70–73 • Bản chậm)" },
+        { type: "youtube", id: "YTyXoC0oyzM", title: "Tập đánh vần (Trang 74–78 • Bản chậm)" },
+        { type: "youtube", id: "X65Wqmquwx4", title: "Tập đánh vần (Trang 79–84 • Bản chậm)" },
+        { type: "youtube", id: "yIQRle4Y9Co", title: "Tập đánh vần (Trang 85–90 • Bản chậm)" },
+        { type: "youtube", id: "6qb4hV6PglE", title: "Tập đánh vần (Trang 91–99 • Bản chậm)" },
+        { type: "youtube", id: "Lf5vZbtX5Yo", title: "Tập đánh vần (Trang 101–106 • Bản chậm)" },
+        { type: "youtube", id: "Z61TeAf840o", title: "Tập đánh vần (Trang 107–112 • Bản chậm)" },
+        { type: "youtube", id: "lO-SG7-AL0A", title: "Tập đánh vần (Trang 113–117 • Bản chậm)" },
+        { type: "youtube", id: "kMGcuc6RvRo", title: "Tập đánh vần (Trang 118–122 • Bản chậm)" },
+      ],
+    },
+    {
+      id: "stories",
+      icon: "📖",
+      freq: "FM 92.0",
+      name: "THƠ & KỂ CHUYỆN BÉ YÊU",
+      tracks: [
+        { type: "youtube", id: "7k6WGi0ce6Q", title: "Những Bài Thơ Hay Giúp Bé Phát Triển Ngôn Ngữ (Thơ Mầm Non)" },
+        { type: "youtube", id: "1ZYbU82GVz4", title: "Nhạc Ru Ngủ Êm Dịu Cho Bé" },
+        { type: "youtube", id: "lFcSrYw-ARY", title: "Âm Thanh Thiên Nhiên Thư Giãn" },
+      ],
+    },
+    {
       id: "en-kids",
       icon: "🇬🇧",
-      freq: "FM 88.5",
+      freq: "FM 96.5",
       name: "TIẾNG ANH BÉ YÊU",
       tracks: [
         { type: "youtube", id: "hq3yfQnllfQ", title: "Phonics Song with TWO Words" },
@@ -28,19 +62,9 @@ const DEFAULT_DATA = {
       ],
     },
     {
-      id: "stories",
-      icon: "📖",
-      freq: "FM 92.0",
-      name: "KỂ CHUYỆN & NGỦ NGON",
-      tracks: [
-        { type: "youtube", id: "1ZYbU82GVz4", title: "Nhạc Ru Ngủ Êm Dịu Cho Bé" },
-        { type: "youtube", id: "lFcSrYw-ARY", title: "Âm Thanh Thiên Nhiên Thư Giãn" },
-      ],
-    },
-    {
       id: "music",
       icon: "🎵",
-      freq: "FM 98.4",
+      freq: "FM 101.2",
       name: "NHẠC THIẾU NHI VUI",
       tracks: [
         { type: "youtube", id: "XqZsoesa55w", title: "Baby Shark Dance" },
